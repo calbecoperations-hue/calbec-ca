@@ -103,8 +103,8 @@ section.hero{padding:0}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
 .service-card{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:1.8rem;transition:var(--transition);position:relative;overflow:hidden}
 .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--amber));transform:scaleX(0);transform-origin:left;transition:var(--transition)}
-.service-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.07);border-color:transparent}
-.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover,.service-card.lit{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.07);border-color:transparent}
+.service-card:hover::before,.service-card.lit::before{transform:scaleX(1)}
 .service-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
 .service-icon svg{width:22px;height:22px}
 .service-icon.blue{background:var(--blue-dim)}
@@ -134,7 +134,7 @@ section.hero{padding:0}
 .who-inner{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
 .who-cards{display:flex;flex-direction:column;gap:1.2rem}
 .who-card{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:1.8rem;transition:var(--transition)}
-.who-card:hover{border-color:rgba(245,158,11,0.5);box-shadow:0 16px 40px rgba(0,0,0,0.05)}
+.who-card:hover,.who-card.lit{border-color:rgba(245,158,11,0.5);box-shadow:0 16px 40px rgba(0,0,0,0.05)}
 .who-card h3{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;display:flex;align-items:center;gap:10px}
 .who-card h3 .wi{width:20px;height:20px;flex-shrink:0}
 .who-card p{font-size:0.85rem;color:var(--gray-500);line-height:1.6}
@@ -363,7 +363,7 @@ section.hero{padding:0}
         </div>
       </div>
       <div class="contact-form reveal">
-        <form id="contactForm" action="https://formsubmit.co/bonjour@calbecoperations.ca" method="POST">
+        <form id="contactForm" action="https://formsubmit.co/danielcalderon@calbec.ca" method="POST">
           <input type="hidden" name="_subject" value="Nueva solicitud — calbec.ca (México–Canadá)">
           <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_template" value="table">
@@ -386,7 +386,7 @@ section.hero{padding:0}
           </div>
           <div class="form-group">
             <label for="f-message" data-es="Mensaje" data-fr="Message" data-en="Message">Mensaje</label>
-            <textarea id="f-message" name="message" rows="4" data-placeholder-es="Ejemplo: qué fabrica, capacidad de producción, si ya exporta y a qué tipo de comprador quiere llegar..." data-placeholder-fr="Exemple : produit recherché, volumes, délais et contraintes..." data-placeholder-en="Example: product, volumes, timelines and constraints..."></textarea>
+            <textarea id="f-message" name="message" rows="4" required data-placeholder-es="Ejemplo: qué fabrica, capacidad de producción, si ya exporta y a qué tipo de comprador quiere llegar..." data-placeholder-fr="Exemple : produit recherché, volumes, délais et contraintes..." data-placeholder-en="Example: product, volumes, timelines and constraints..."></textarea>
           </div>
           <button type="submit" class="form-submit" data-es="Enviar mensaje" data-fr="Envoyer le message" data-en="Send message">Enviar mensaje</button>
         </form>
@@ -447,31 +447,13 @@ document.addEventListener('click',function(e){
   if(nl.classList.contains('open')&&!e.target.closest('#navLinks')&&!e.target.closest('#navToggle'))nl.classList.remove('open');
 });
 
-// Ruta México – Canadá
+// Ruta México – Canadá: se abre del centro hacia los lados al verse y se retrae al centro al salir de la pantalla
 (function(){
   var route=document.querySelector('.route');
-  var ends=route.querySelectorAll('.route-end');
-  var touch=window.matchMedia('(hover: none), (max-width: 900px)');
-  function mode(){route.classList.remove('on','from-right');route.classList.toggle('touch',touch.matches);}
-  mode();
-  if(touch.addEventListener)touch.addEventListener('change',mode);
-  // Ordenador: México dibuja de izquierda a derecha, Canadá de derecha a izquierda
-  ends[0].addEventListener('mouseenter',function(){
-    if(touch.matches)return;
-    route.classList.remove('from-right');void route.offsetWidth;route.classList.add('on');
-  });
-  ends[1].addEventListener('mouseenter',function(){
-    if(touch.matches)return;
-    route.classList.add('from-right');void route.offsetWidth;route.classList.add('on');
-  });
-  ends.forEach(function(el){
-    el.addEventListener('mouseleave',function(){if(!touch.matches)route.classList.remove('on');});
-  });
-  // Teléfono: del centro hacia México y Canadá al desplazarse
+  route.classList.add('touch');
   new IntersectionObserver(function(entries){
-    if(!touch.matches)return;
     entries.forEach(function(e){route.classList.toggle('on',e.isIntersecting);});
-  },{rootMargin:'-12% 0px -28% 0px',threshold:1}).observe(route);
+  },{rootMargin:'-70px 0px -10% 0px',threshold:1}).observe(route);
 })();
 
 // Logo: volver al inicio
@@ -490,6 +472,14 @@ var obs=new IntersectionObserver(function(entries){
   });
 },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+  // Teléfono: las tarjetas se iluminan al pasar por el centro de la pantalla
+(function(){
+  var small=window.matchMedia('(hover: none), (max-width: 900px)');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){e.target.classList.toggle('lit',small.matches&&e.isIntersecting);});
+  },{rootMargin:'-35% 0px -35% 0px'});
+  document.querySelectorAll('.service-card,.who-card').forEach(function(el){io.observe(el);});
+})();
 
 // Navbar shadow
 window.addEventListener('scroll',function(){
