@@ -81,8 +81,8 @@ html[lang="en"] .nav-logo-sub{text-align:center;transform:translateX(1.3px)}
 .route-line{position:relative;height:3px;border-radius:3px;background:var(--gray-200)}
 .route-line::before{content:'';position:absolute;inset:0;border-radius:3px;background:linear-gradient(90deg,var(--blue),var(--amber));transform:scaleX(0);transform-origin:left;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1)}
 .route.from-right .route-line::before{transform-origin:right}
-.route.touch .route-line::before{background:linear-gradient(90deg,var(--amber),var(--blue),var(--amber));transform-origin:center;transition-duration:1s}
-.route.on .route-line::before{transform:scaleX(1)}
+.route.touch .route-line::before{background:linear-gradient(90deg,var(--amber),var(--blue),var(--amber));transform-origin:center;transition-duration:1.8s}
+.route.on .route-line::before{transform:scaleX(1);transition-delay:0.8s}
 
 @media(max-width:900px){
   .hero-content{padding:7rem 1.5rem 3rem}
