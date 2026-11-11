@@ -81,8 +81,9 @@ html[lang="en"] .nav-logo-sub{text-align:center;transform:translateX(1.3px)}
 .route-line{position:relative;height:3px;border-radius:3px;background:var(--gray-200)}
 .route-line::before{content:'';position:absolute;inset:0;border-radius:3px;background:linear-gradient(90deg,var(--blue),var(--amber));transform:scaleX(0);transform-origin:left;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1)}
 .route.from-right .route-line::before{transform-origin:right}
-.route.touch .route-line::before{background:linear-gradient(90deg,var(--amber),var(--blue),var(--amber));transform-origin:center;transition-duration:1.8s}
-.route.on .route-line::before{transform:scaleX(1);transition-delay:0.8s}
+.route.touch .route-line::before{background:linear-gradient(90deg,var(--amber),var(--blue),var(--amber));transform-origin:center;transition-duration:1.5s}
+.route.on .route-line::before{transform:scaleX(1);transition-delay:0.5s}
+  .route-line.reset::before{transition:none!important}
 
 @media(max-width:900px){
   .hero-content{padding:7rem 1.5rem 3rem}
@@ -102,7 +103,7 @@ section.hero{padding:0}
 .services{background:var(--gray-50)}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
 .service-card{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:1.8rem;transition:var(--transition);position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--amber));transform:scaleX(0);transform-origin:left;transition:var(--transition)}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--amber));transform:scaleX(0);transform-origin:left;transition:transform 0.9s cubic-bezier(0.4,0,0.2,1)}
 .service-card:hover,.service-card.lit{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.07);border-color:transparent}
 .service-card:hover::before,.service-card.lit::before{transform:scaleX(1)}
 .service-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
@@ -424,6 +425,12 @@ function setLang(lang){
   document.getElementById('formLang').value=lang;
   document.documentElement.lang=lang;
   document.title=TITLES[lang];
+    var r=document.querySelector('.route');
+  if(r&&r.classList.contains('on')){
+    var l=r.querySelector('.route-line');
+    l.classList.add('reset');r.classList.remove('on');void l.offsetWidth;
+    l.classList.remove('reset');r.classList.add('on');
+  }
 }
 (function(){
   var q=(new URLSearchParams(location.search).get('lang')||'').slice(0,2).toLowerCase();
@@ -453,7 +460,7 @@ document.addEventListener('click',function(e){
   route.classList.add('touch');
   new IntersectionObserver(function(entries){
     entries.forEach(function(e){route.classList.toggle('on',e.isIntersecting);});
-  },{rootMargin:'-70px 0px -10% 0px',threshold:1}).observe(route);
+    },{rootMargin:'-70px 0px 0px 0px',threshold:1}).observe(route);
 })();
 
 // Logo: volver al inicio
