@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><link rel="icon" type="image/png" href="https://calbecoperations.ca/favicon.png">
+<meta charset="UTF-8">
+<link rel="canonical" href="https://calbec.ca/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calbec México–Canadá | Representación comercial en Canadá — Montréal, QC</title>
+<meta name="description" content="Calbec conecta fabricantes mexicanos con compradores B2B en Canadá. Representación comercial con base en Montreal, en español, francés e inglés.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1120;--navy-mid:#131D35;--navy-light:#1A2744;
+  --blue:#2563EB;--blue-hover:#3B82F6;--blue-dim:rgba(37,99,235,0.12);
+  --amber:#F59E0B;--amber-hover:#FBBF24;--amber-dim:rgba(245,158,11,0.1);--amber-deep:#D97706;
+  --white:#FFFFFF;--gray-50:#F8FAFC;--gray-100:#F1F5F9;--gray-200:#E2E8F0;
+  --gray-400:#94A3B8;--gray-500:#64748B;--gray-600:#475569;--gray-800:#1E293B;
+  --green:#10B981;--green-dim:rgba(16,185,129,0.1);
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  --transition:0.3s cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--font-body);color:var(--gray-800);background:var(--white);line-height:1.6;overflow-x:hidden}
+
+/* ═══ NAVBAR ═══ */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(11,17,32,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);transition:var(--transition)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav-logo{display:flex;flex-direction:column;text-decoration:none;line-height:1.15}
+.nav-logo-main{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--white);letter-spacing:-0.5px}
+.nav-logo-main span{color:var(--amber)}
+.nav-logo-sub{font-size:0.6rem;color:var(--gray-400);letter-spacing:2.5px;text-transform:uppercase;font-weight:500}
+html[lang="en"] .nav-logo-sub{text-align:center;transform:translateX(1.3px)}
+.nav-links{display:flex;align-items:center;gap:1.8rem}
+.nav-links a{color:var(--gray-400);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.3px;transition:var(--transition)}
+.nav-links a:hover{color:var(--white)}
+.lang-switch{display:flex;gap:3px;margin-left:1.2rem;padding-left:1.2rem;border-left:1px solid rgba(255,255,255,0.1)}
+.lang-btn{background:none;border:1px solid rgba(255,255,255,0.12);color:var(--gray-400);padding:3px 9px;border-radius:4px;font-size:0.7rem;font-weight:600;cursor:pointer;transition:var(--transition);font-family:var(--font-body);letter-spacing:0.5px}
+.lang-btn:hover{border-color:var(--amber);color:var(--amber)}
+.lang-btn.active{background:var(--amber);color:var(--navy);border-color:var(--amber)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-toggle span{width:22px;height:2px;background:var(--white);transition:var(--transition)}
+
+@media(max-width:900px){
+  .nav-toggle{display:flex}
+  .nav-links{position:fixed;top:68px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1.5rem 2rem;gap:1.2rem;transform:translateY(calc(-100% - 80px));transition:var(--transition);border-bottom:1px solid rgba(255,255,255,0.06)}
+  .nav-links.open{transform:translateY(0)}
+  .lang-switch{margin-left:0;padding-left:0;border-left:none;padding-top:0.8rem;border-top:1px solid rgba(255,255,255,0.08)}
+}
+
+/* ═══ HERO (fondo blanco) ═══ */
+.hero{position:relative;display:flex;align-items:center;background:var(--white);overflow:hidden}
+.hero-pattern{position:absolute;inset:0;opacity:0.35;background-image:
+  radial-gradient(circle at 20% 50%,rgba(37,99,235,0.3) 0%,transparent 50%),
+  radial-gradient(circle at 80% 20%,rgba(245,158,11,0.2) 0%,transparent 40%),
+  radial-gradient(circle at 60% 80%,rgba(37,99,235,0.15) 0%,transparent 45%)}
+.hero-grid-pattern{position:absolute;inset:0;opacity:0.035;background-size:60px 60px;background-image:linear-gradient(rgba(11,17,32,0.6) 1px,transparent 1px),linear-gradient(90deg,rgba(11,17,32,0.6) 1px,transparent 1px)}
+.hero-content{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:9rem 2rem 4.5rem}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-dim);border:1px solid rgba(37,99,235,0.3);padding:6px 16px;border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:1.2rem;animation:fadeInUp 0.8s ease both}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:800;color:var(--navy);line-height:1.1;margin-bottom:0.8rem;animation:fadeInUp 0.8s 0.1s ease both}
+.hero h1 em{font-style:normal;color:var(--amber-deep);display:block}
+.hero-text{font-size:1.05rem;color:var(--gray-600);line-height:1.7;margin-bottom:2rem;max-width:560px;animation:fadeInUp 0.8s 0.2s ease both}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeInUp 0.8s 0.3s ease both}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:8px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:var(--transition);border:none;cursor:pointer;font-family:var(--font-body);letter-spacing:0.2px}
+.btn-primary{background:var(--blue);color:var(--white)}
+.btn-primary:hover{background:var(--blue-hover);transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,99,235,0.3)}
+.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--gray-200)}
+.btn-outline:hover{border-color:var(--navy);background:rgba(11,17,32,0.03);transform:translateY(-2px)}
+.btn svg{width:16px;height:16px}
+
+/* Ruta México – Canadá */
+.route{margin-top:3.5rem;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.4rem;animation:fadeInUp 0.8s 0.4s ease both}
+.route-end{font-family:var(--font-display);font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:700;color:var(--navy);line-height:1}
+.route-end{cursor:default}
+.route-line{position:relative;height:3px;border-radius:3px;background:var(--gray-200)}
+.route-line::before{content:'';position:absolute;inset:0;border-radius:3px;background:linear-gradient(90deg,var(--blue),var(--amber));transform:scaleX(0);transform-origin:left;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1)}
+.route.from-right .route-line::before{transform-origin:right}
+.route.touch .route-line::before{background:linear-gradient(90deg,var(--amber),var(--blue),var(--amber));transform-origin:center;transition-duration:1s}
+.route.on .route-line::before{transform:scaleX(1)}
+
+@media(max-width:900px){
+  .hero-content{padding:7rem 1.5rem 3rem}
+  .route{gap:0.9rem;margin-top:2.5rem}
+}
+
+/* ═══ SECTIONS ═══ */
+section{padding:5rem 2rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:0.75rem;font-weight:600;color:var(--blue);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.8rem}
+.section-label::before{content:'';width:20px;height:2px;background:var(--blue)}
+.section-title{font-family:var(--font-display);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:0.8rem}
+.section-subtitle{font-size:1rem;color:var(--gray-500);max-width:560px;line-height:1.7}
+section.hero{padding:0}
+
+/* ═══ SERVICES ═══ */
+.services{background:var(--gray-50)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+.service-card{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:1.8rem;transition:var(--transition);position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--amber));transform:scaleX(0);transform-origin:left;transition:var(--transition)}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.07);border-color:transparent}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.service-icon svg{width:22px;height:22px}
+.service-icon.blue{background:var(--blue-dim)}
+.service-icon.blue svg{stroke:var(--blue)}
+.service-icon.amber{background:var(--amber-dim)}
+.service-icon.amber svg{stroke:var(--amber)}
+.service-icon.green{background:var(--green-dim)}
+.service-icon.green svg{stroke:var(--green)}
+.service-card h3{font-size:0.98rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem}
+.service-card p{font-size:0.85rem;color:var(--gray-500);line-height:1.6}
+
+@media(max-width:900px){.services-grid{grid-template-columns:1fr}}
+
+/* ═══ PROCESS ═══ */
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:2.5rem}
+.process-step{text-align:center;position:relative}
+.process-step::after{content:'';position:absolute;top:26px;left:calc(50% + 30px);width:calc(100% - 60px);height:2px;background:var(--gray-200)}
+.process-step:last-child::after{display:none}
+.process-num{width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--amber);font-family:var(--font-display);font-size:1.2rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;position:relative;z-index:1}
+.process-step h3{font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem}
+.process-step p{font-size:0.82rem;color:var(--gray-500);line-height:1.5;max-width:300px;margin:0 auto}
+
+@media(max-width:768px){.process-grid{grid-template-columns:1fr;gap:2rem}.process-step::after{display:none}}
+
+/* ═══ QUIÉN ═══ */
+.who{background:linear-gradient(135deg,#FDF5E6 0%,#FFF9F0 100%)}
+.who-inner{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.who-cards{display:flex;flex-direction:column;gap:1.2rem}
+.who-card{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:1.8rem;transition:var(--transition)}
+.who-card:hover{border-color:rgba(245,158,11,0.5);box-shadow:0 16px 40px rgba(0,0,0,0.05)}
+.who-card h3{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;display:flex;align-items:center;gap:10px}
+.who-card h3 .wi{width:20px;height:20px;flex-shrink:0}
+.who-card p{font-size:0.85rem;color:var(--gray-500);line-height:1.6}
+@media(max-width:900px){.who-inner{grid-template-columns:1fr;gap:1.5rem}}
+
+/* ═══ CONTACT ═══ */
+.contact{background:var(--gray-50)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:2.5rem}
+.contact-info{display:flex;flex-direction:column;gap:1.3rem}
+.contact-item{display:flex;align-items:flex-start;gap:12px}
+.contact-icon{width:40px;height:40px;border-radius:10px;background:var(--blue-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-icon svg{width:18px;height:18px;stroke:var(--blue)}
+.contact-item h4{font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:2px}
+.contact-item p{font-size:0.85rem;color:var(--gray-500)}
+.contact-item a{color:var(--blue);text-decoration:none}
+.contact-item a:hover{text-decoration:underline}
+.contact-form{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:2rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:0.8rem;font-weight:600;color:var(--navy);margin-bottom:5px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:11px 14px;border:1.5px solid var(--gray-200);border-radius:8px;font-family:var(--font-body);font-size:0.88rem;transition:var(--transition);background:var(--white);color:var(--gray-800)}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.08)}
+.form-group textarea{resize:vertical;min-height:90px}
+.form-submit{width:100%;padding:13px;background:var(--blue);color:var(--white);border:none;border-radius:8px;font-family:var(--font-body);font-size:0.88rem;font-weight:600;cursor:pointer;transition:var(--transition)}
+.form-submit:hover{background:var(--blue-hover);transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,0.25)}
+
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+
+/* ═══ FOOTER ═══ */
+.footer{background:var(--navy);color:var(--gray-400);padding:2.5rem 2rem;text-align:center;font-size:0.8rem;border-top:1px solid rgba(255,255,255,0.06)}
+.footer a{color:var(--amber);text-decoration:none}
+.footer-line{margin-top:0.4rem;color:var(--gray-500);font-size:0.75rem}
+
+/* ═══ SCROLL ANIMATIONS ═══ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  .route-line::before{transition:none;transform:scaleX(1)}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" id="navLogo">
+      <span class="nav-logo-main"><svg viewBox="0 0 100 22" width="62" height="13" style="display:block;margin-bottom:-2px;margin-left:0px"><polyline points="50,2 2,20" fill="none" stroke="#D97706" stroke-width="2.2"/><polyline points="50,2 98,20" fill="none" stroke="#D97706" stroke-width="2.2"/></svg>Calbec <span data-es="Comercio" data-fr="Commerce" data-en="Trade">Comercio</span></span>
+      <span class="nav-logo-sub" data-es="México · Canadá" data-fr="Mexique · Canada" data-en="Mexico · Canada">México · Canadá</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#servicios" data-es="Servicios" data-fr="Services" data-en="Services">Servicios</a>
+      <a href="#proceso" data-es="Proceso" data-fr="Processus" data-en="Process">Proceso</a>
+      <a href="#quien" data-es="Quién" data-fr="Qui" data-en="About">Quién</a>
+      <a href="#contacto" data-es="Contacto" data-fr="Contact" data-en="Contact">Contacto</a>
+      <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge" data-es="Representación comercial México–Canadá" data-fr="Développement commercial Mexique–Canada" data-en="Mexico–Canada business development">Representación comercial México–Canadá</div>
+    <h1>
+      <span data-es="Conectamos fabricantes mexicanos" data-fr="Des produits manufacturés mexicains" data-en="Mexican-made products">Conectamos fabricantes mexicanos</span>
+      <em data-es="con compradores en Canadá." data-fr="pour les entreprises d’ici." data-en="for Canadian businesses.">con compradores en Canadá.</em>
+    </h1>
+    <p class="hero-text" data-es="Con base en Montreal, Calbec presenta su producto a compradores B2B de Quebec y da seguimiento local en español, francés e inglés." data-fr="Établi à Montréal, Calbec fait le lien entre des fabricants mexicains et les acheteurs B2B du Québec : un interlocuteur local, en français, pour un approvisionnement nord-américain." data-en="Based in Montreal, Calbec connects Mexican manufacturers with B2B buyers in Canada: one local contact, in English or French, for North American sourcing.">Con base en Montreal, Calbec presenta su producto a compradores B2B de Quebec y da seguimiento local en español, francés e inglés.</p>
+    <div class="hero-buttons">
+      <a href="#contacto" class="btn btn-primary">
+        <span data-es="Presentar mi empresa" data-fr="Décrire mon besoin" data-en="Describe what I need">Presentar mi empresa</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#servicios" class="btn btn-outline" data-es="Descubrir nuestros servicios" data-fr="Découvrir nos services" data-en="Discover our services">Descubrir nuestros servicios</a>
+    </div>
+    <div class="route">
+      <div class="route-end" data-es="México" data-fr="Mexique" data-en="Mexico">México</div>
+      <div class="route-line"></div>
+      <div class="route-end" data-es="Canadá" data-fr="Canada" data-en="Canada">Canadá</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICIOS ═══ -->
+<section class="services" id="servicios">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label" data-es="Lo que hacemos" data-fr="Ce que nous faisons" data-en="What we do">Lo que hacemos</div>
+      <h2 class="section-title" data-es="Lo que Calbec hace por un fabricante" data-fr="Ce que Calbec apporte à un acheteur" data-en="What Calbec brings to a buyer">Lo que Calbec hace por un fabricante</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 data-es="Representación en Quebec" data-fr="Un interlocuteur à Montréal" data-en="A contact in Montreal">Representación en Quebec</h3>
+        <p data-es="Una persona en Montreal que presenta su producto, da seguimiento y responde en el horario y el idioma del comprador." data-fr="Vous parlez à quelqu’un d’ici, en français ou en anglais, qui connaît le fabricant et assure le suivi." data-en="You deal with someone local, in English or French, who knows the manufacturer and handles follow-up.">Una persona en Montreal que presenta su producto, da seguimiento y responde en el horario y el idioma del comprador.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 data-es="Presentación a compradores B2B" data-fr="Des fabricants rencontrés sur place" data-en="Manufacturers met in person">Presentación a compradores B2B</h3>
+        <p data-es="Catálogo, muestras y precios frente a empresas que compran de forma recurrente: comercios especializados, hotelería, restauración y distribuidores." data-fr="Chaque fabricant est rencontré au Mexique avant de vous être présenté : capacité de production, qualité et expérience à l’exportation." data-en="Every manufacturer is met in Mexico before being introduced to you: production capacity, quality and export experience.">Catálogo, muestras y precios frente a empresas que compran de forma recurrente: comercios especializados, hotelería, restauración y distribuidores.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon green">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/><rect x="1" y="1" width="9" height="9" rx="1"/><rect x="14" y="14" width="9" height="9" rx="1"/></svg>
+        </div>
+        <h3 data-es="Acompañamiento operativo" data-fr="Un regard opérationnel" data-en="An operations eye">Acompañamiento operativo</h3>
+        <p data-es="Experiencia directa en recepción, inventarios y expedición en Canadá para anticipar lo que el comprador va a exigir: empaque, etiquetado, plazos y documentación." data-fr="Réception, inventaire, expédition : l’expérience terrain de Calbec sert à anticiper l’emballage, l’étiquetage et les délais." data-en="Receiving, inventory, shipping: Calbec’s floor experience helps anticipate packaging, labelling and lead times.">Experiencia directa en recepción, inventarios y expedición en Canadá para anticipar lo que el comprador va a exigir: empaque, etiquetado, plazos y documentación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESO ═══ -->
+<section id="proceso">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center" data-es="Cómo funciona" data-fr="Comment ça marche" data-en="How it works">Cómo funciona</div>
+      <h2 class="section-title" data-es="Un proceso simple y directo" data-fr="Un processus simple et direct" data-en="A simple and direct process">Un proceso simple y directo</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-num">1</div>
+        <h3 data-es="Evaluación del producto" data-fr="Votre besoin" data-en="Your need">Evaluación del producto</h3>
+        <p data-es="Revisamos catálogo, capacidad de producción, precios de exportación y experiencia exportadora." data-fr="Vous décrivez le produit recherché, les volumes et vos contraintes." data-en="You describe the product you are looking for, your volumes and your constraints.">Revisamos catálogo, capacidad de producción, precios de exportación y experiencia exportadora.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">2</div>
+        <h3 data-es="Presentación a compradores" data-fr="Échantillons et prix" data-en="Samples and pricing">Presentación a compradores</h3>
+        <p data-es="Probamos el producto con compradores de Quebec y le compartimos su respuesta, sea cual sea." data-fr="Nous revenons avec un catalogue, des échantillons et des prix à l’exportation." data-en="We come back with a catalogue, samples and export prices.">Probamos el producto con compradores de Quebec y le compartimos su respuesta, sea cual sea.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">3</div>
+        <h3 data-es="Acuerdo de representación" data-fr="Commande directe" data-en="Direct order">Acuerdo de representación</h3>
+        <p data-es="Si hay interés real, formalizamos por escrito comisión, territorio y condiciones." data-fr="Vous commandez directement auprès du fabricant; Calbec assure le suivi." data-en="You order directly from the manufacturer; Calbec handles follow-up.">Si hay interés real, formalizamos por escrito comisión, territorio y condiciones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUIÉN ═══ -->
+<section class="who" id="quien">
+  <div class="section-inner">
+    <div class="who-inner">
+      <div class="reveal">
+        <div class="section-label" data-es="Fundador · Desarrollo comercial" data-fr="Fondateur · Développement commercial" data-en="Founder · Business development">Fundador · Desarrollo comercial</div>
+        <h2 class="section-title">Daniel Calderón Torres</h2>
+      </div>
+      <div class="who-cards">
+        <div class="who-card reveal">
+          <h3>
+            <svg class="wi" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg>
+            <span data-es="Formación y experiencia" data-fr="Formation et expérience" data-en="Background and experience">Formación y experiencia</span>
+          </h3>
+          <p data-es="Formación en Comercio y Negocios Internacionales y más de siete años de experiencia en operaciones, inventarios y logística, con trayectoria profesional en México y en Canadá." data-fr="Formation en commerce et affaires internationales et plus de sept ans d’expérience en opérations, inventaire et logistique, au Mexique et au Canada." data-en="Trained in international trade and business, with more than seven years of experience in operations, inventory and logistics, in Mexico and Canada.">Formación en Comercio y Negocios Internacionales y más de siete años de experiencia en operaciones, inventarios y logística, con trayectoria profesional en México y en Canadá.</p>
+        </div>
+        <div class="who-card reveal">
+          <h3>
+            <svg class="wi" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <span data-es="Trilingüe ES · FR · EN" data-fr="Trilingue FR · EN · ES" data-en="Trilingual EN · FR · ES">Trilingüe ES · FR · EN</span>
+          </h3>
+          <p data-es="Establecido en Montreal. Trabaja en español, francés e inglés." data-fr="Établi à Montréal. Travaille en français, en anglais et en espagnol." data-en="Based in Montreal. Works in English, French and Spanish.">Establecido en Montreal. Trabaja en español, francés e inglés.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACTO ═══ -->
+<section class="contact" id="contacto">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label" data-es="Hablemos de su producto" data-fr="Parlons de votre besoin" data-en="Let’s talk about what you need">Hablemos de su producto</div>
+      <h2 class="section-title" data-es="Presente su empresa" data-fr="Décrivez votre besoin" data-en="Describe what you need">Presente su empresa</h2>
+      <p class="section-subtitle" data-es="Explique brevemente qué fabrica y a qué mercado quiere llegar. Le respondo por correo." data-fr="Expliquez brièvement le produit que vous cherchez. Je vous réponds par courriel." data-en="Briefly explain the product you are looking for. I will reply by email.">Explique brevemente qué fabrica y a qué mercado quiere llegar. Le respondo por correo.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4 data-es="Correo" data-fr="Courriel" data-en="Email">Correo</h4>
+            <p><a href="mailto:danielcalderon@calbec.ca">danielcalderon@calbec.ca</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h4 data-es="Teléfono" data-fr="Téléphone" data-en="Phone">Teléfono</h4>
+            <p><a href="tel:+14383375673">+1 (438) 337-5673</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4 data-es="Ubicación" data-fr="Emplacement" data-en="Location">Ubicación</h4>
+            <p data-es="Montreal, Quebec, Canadá" data-fr="Montréal (Québec) Canada" data-en="Montreal, Quebec, Canada">Montreal, Quebec, Canadá</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <div>
+            <h4 data-es="Idiomas" data-fr="Langues" data-en="Languages">Idiomas</h4>
+            <p>ES · FR · EN</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <form id="contactForm" action="https://formsubmit.co/bonjour@calbecoperations.ca" method="POST">
+          <input type="hidden" name="_subject" value="Nueva solicitud — calbec.ca (México–Canadá)">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="idioma" id="formLang" value="es">
+          <div class="form-group">
+            <label for="f-name" data-es="Nombre completo" data-fr="Nom complet" data-en="Full name">Nombre completo</label>
+            <input type="text" id="f-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="f-company" data-es="Empresa" data-fr="Entreprise" data-en="Company">Empresa</label>
+            <input type="text" id="f-company" name="company" required>
+          </div>
+          <div class="form-group">
+            <label for="f-email" data-es="Correo" data-fr="Courriel" data-en="Email">Correo</label>
+            <input type="email" id="f-email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="f-product" data-es="Producto o categoría" data-fr="Produit recherché" data-en="Product you are looking for">Producto o categoría</label>
+            <input type="text" id="f-product" name="product">
+          </div>
+          <div class="form-group">
+            <label for="f-message" data-es="Mensaje" data-fr="Message" data-en="Message">Mensaje</label>
+            <textarea id="f-message" name="message" rows="4" data-placeholder-es="Ejemplo: qué fabrica, capacidad de producción, si ya exporta y a qué tipo de comprador quiere llegar..." data-placeholder-fr="Exemple : produit recherché, volumes, délais et contraintes..." data-placeholder-en="Example: product, volumes, timelines and constraints..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" data-es="Enviar mensaje" data-fr="Envoyer le message" data-en="Send message">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <p>© 2026 Calbec Opérations — Daniel Calderón Torres</p>
+  <p class="footer-line" data-es="Representación comercial México–Canadá | Montréal, QC | ES · FR · EN" data-fr="Développement commercial Mexique–Canada | Montréal, QC | FR · EN · ES" data-en="Mexico–Canada business development | Montréal, QC | EN · FR · ES">Representación comercial México–Canadá | Montréal, QC | ES · FR · EN</p>
+  <p class="footer-line"><span data-es="Reorganización de almacenes y operaciones en Quebec:" data-fr="Implantation opérationnelle terrain au Québec :" data-en="On-site operational implementation in Quebec:">Reorganización de almacenes y operaciones en Quebec:</span> <a href="https://calbecoperations.ca/">calbecoperations.ca</a></p>
+</footer>
+
+<script>
+var TITLES={
+  es:'Calbec México–Canadá | Representación comercial en Canadá — Montréal, QC',
+  fr:'Calbec Mexique–Canada | Produits manufacturés mexicains au Québec — Montréal, QC',
+  en:'Calbec Mexico–Canada | Mexican-made products for Canadian businesses — Montréal, QC'
+};
+var currentLang='es';
+function setLang(lang){
+  currentLang=lang;
+  document.querySelectorAll('[data-'+lang+']').forEach(function(el){
+    el.textContent=el.getAttribute('data-'+lang);
+  });
+  document.querySelectorAll('[data-placeholder-'+lang+']').forEach(function(el){
+    el.setAttribute('placeholder',el.getAttribute('data-placeholder-'+lang));
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.remove('active');
+    if(b.textContent.trim()===lang.toUpperCase())b.classList.add('active');
+  });
+  document.getElementById('formLang').value=lang;
+  document.documentElement.lang=lang;
+  document.title=TITLES[lang];
+}
+(function(){
+  var q=(new URLSearchParams(location.search).get('lang')||'').slice(0,2).toLowerCase();
+  if(q!=='es'&&q!=='fr'&&q!=='en'){
+    q=(navigator.language||'es').slice(0,2).toLowerCase();
+    if(q!=='fr'&&q!=='en')q='es';
+  }
+  setLang(q);
+})();
+
+// Mobile menu
+document.getElementById('navToggle').addEventListener('click',function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(function(l){
+  l.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open');});
+});
+
+document.addEventListener('click',function(e){
+  var nl=document.getElementById('navLinks');
+  if(nl.classList.contains('open')&&!e.target.closest('#navLinks')&&!e.target.closest('#navToggle'))nl.classList.remove('open');
+});
+
+// Ruta México – Canadá
+(function(){
+  var route=document.querySelector('.route');
+  var ends=route.querySelectorAll('.route-end');
+  var touch=window.matchMedia('(hover: none), (max-width: 900px)');
+  function mode(){route.classList.remove('on','from-right');route.classList.toggle('touch',touch.matches);}
+  mode();
+  if(touch.addEventListener)touch.addEventListener('change',mode);
+  // Ordenador: México dibuja de izquierda a derecha, Canadá de derecha a izquierda
+  ends[0].addEventListener('mouseenter',function(){
+    if(touch.matches)return;
+    route.classList.remove('from-right');void route.offsetWidth;route.classList.add('on');
+  });
+  ends[1].addEventListener('mouseenter',function(){
+    if(touch.matches)return;
+    route.classList.add('from-right');void route.offsetWidth;route.classList.add('on');
+  });
+  ends.forEach(function(el){
+    el.addEventListener('mouseleave',function(){if(!touch.matches)route.classList.remove('on');});
+  });
+  // Teléfono: del centro hacia México y Canadá al desplazarse
+  new IntersectionObserver(function(entries){
+    if(!touch.matches)return;
+    entries.forEach(function(e){route.classList.toggle('on',e.isIntersecting);});
+  },{rootMargin:'-12% 0px -28% 0px',threshold:1}).observe(route);
+})();
+
+// Logo: volver al inicio
+document.getElementById('navLogo').addEventListener('click',function(e){
+  e.preventDefault();
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+// Scroll reveal
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting)e.target.classList.add('visible');
+    // Si el elemento vuelve a quedar por debajo de la pantalla, se oculta para que el difuminado se repita al bajar
+    else if(e.boundingClientRect.top>0)e.target.classList.remove('visible');
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+
+// Navbar shadow
+window.addEventListener('scroll',function(){
+  var n=document.querySelector('.navbar');
+  n.style.boxShadow=window.pageYOffset>80?'0 4px 24px rgba(0,0,0,0.12)':'none';
+});
+</script>
+</body>
+</html>
